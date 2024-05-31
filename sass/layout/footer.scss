@@ -1,0 +1,110 @@
+footer {
+  position: relative;
+
+  #footer_background_desktop {
+    width: 100%;
+    position: absolute;
+    bottom: 100%;
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+      display: none;
+    }
+  }
+  #footer_background_mobile {
+    display: none;
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+      display: flex;
+      width: 100%;
+      position: absolute;
+      bottom: 100%;
+    }
+  }
+  #footer_informations {
+    background-color: $very_dark_cyan;
+
+    #footer {
+      @include flex-space-row;
+      color: $white;
+      @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @include flex-start-column-reverse;
+      }
+
+      .column {
+        @include flex-start-column;
+        margin: 10px 140px;        
+        width: 25%;
+        @media screen and (max-width: map-get($breakpoints, mobile)) {
+          width: 100%;
+          margin: 0px;
+          padding: 10px;
+        }
+        #footer_logo {
+          width: 40%;
+          margin-bottom: 15px;
+          @media screen and (max-width: map-get($breakpoints, mobile)) {
+            width: 70%;
+          }
+        }
+        .icon_text {
+          @include flex-start-row;
+
+          .footer_img {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+          }
+        }
+
+        i {
+          font-size: 15px;
+          border: 1px solid $white;
+          border-radius: 50%;
+          padding: 5px;
+          margin-right: 5px;
+        }
+        .footer_text {
+          font-size: 13px;
+          margin-left: 30px;
+          line-height: 25px;
+          margin-bottom: 10px;
+          @media screen and (max-width: map-get($breakpoints, mobile)) {
+            margin-left: 5px;
+          }
+        }
+
+        h3 {
+          margin-bottom: 20px;
+        }
+        #newsletter_text {
+          line-height: 25px;
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+      }
+      #copyright {
+        font-size: 13px;
+        text-align: end;
+        margin-right: 90px;
+        color: $white;
+        @media screen and (max-width: map-get($breakpoints, mobile)) {
+          text-align: center;
+          margin: 0;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
+.social_network {
+  color: $white;
+  font-size: 25px;
+  margin-left: 140px;
+  padding-bottom: 20px;
+  @media screen and (max-width: map-get($breakpoints, mobile)) {
+    @include flex-start-row;
+    margin-left: 15px;
+  }
+
+  .fab {
+    margin-right: 20px;
+  }
+}

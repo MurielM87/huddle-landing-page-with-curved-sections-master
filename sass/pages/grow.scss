@@ -1,0 +1,66 @@
+#grow {
+  @include flex-space-column;
+  @media screen and (max-width: map-get($breakpoints, mobile)) {
+    margin: 0px;
+    margin-bottom: 30px;
+  }
+
+  .grow_background_desktop {
+    width: 100%;
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+      display: none;
+    }
+  }
+  .grow_background_mobile {
+    display: none;
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+      display: flex;
+      width: 100%;
+    }
+  }
+  #grow_section {
+    @include flex-space-row;
+    background: #f4fefe;
+    padding: 0 100px;
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @include flex-center-column-reverse;
+        padding: 0;
+    }
+
+    #grow_text {
+      @include flex-space-column;
+      margin: auto 0px;
+      @media screen and (max-width: map-get($breakpoints, mobile)) {
+        width: 90%;
+        margin: 20px auto;
+      }
+
+      h2 {
+        color: $very_dark_cyan;
+        margin-bottom: 40px;
+        @media screen and (max-width: map-get($breakpoints, mobile)) {
+          text-align: center;
+          font-size: 20px;
+        }
+      }
+      p {
+        color: $grayish_blue;
+        line-height: 35px;
+        @media screen and (max-width: map-get($breakpoints, mobile)) {
+          text-align: center;
+          font-size: 11px;
+          line-height: 25px;
+        }
+      }
+    }
+
+    #grow_img {
+      width: 50%;
+      margin: 50px;
+      @media screen and (max-width: map-get($breakpoints, mobile)) {
+        width: 80%;
+        margin: 15px auto;
+      }
+    }
+  }
+}
